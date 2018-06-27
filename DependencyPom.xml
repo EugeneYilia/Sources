@@ -1,0 +1,189 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+    <modelVersion>4.0.0</modelVersion>  
+    <groupId>com.lyd</groupId>  
+    <artifactId>springboot-lyd</artifactId>  
+    <version>0.0.1-SNAPSHOT</version>  
+    <packaging>pom</packaging>  
+    <modules>  
+        <module>example01</module>  
+    </modules>  
+  
+    <parent>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-parent</artifactId>  
+        <version>1.3.2.RELEASE</version>  
+    </parent>  
+  
+    <properties>  
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
+                <java.version>1.7</java.version>  
+        <springboot.version>1.3.2.RELEASE</springboot.version>  
+        <swagger2.version>2.2.2</swagger2.version>  
+        <mysql.version>5.1.21</mysql.version>  
+        <mybatis.version>1.1.1</mybatis.version>  
+        <mongodb.version>3.2.2</mongodb.version>  
+    </properties>  
+  
+    <dependencies>  
+        <!-- springboot 基础包 -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter</artifactId>  
+            <exclusions>  
+                <!-- 引入log4j日志时需去掉默认的logback -->  
+                <exclusion>  
+                    <groupId>org.springframework.boot</groupId>  
+                    <artifactId>spring-boot-starter-logging</artifactId>  
+                </exclusion>  
+            </exclusions>  
+        </dependency>  
+  
+        <!-- 日志管理 log4j -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-log4j</artifactId>  
+        </dependency>  
+  
+        <!-- springboot 测试包 -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-test</artifactId>  
+            <scope>test</scope>  
+        </dependency>  
+  
+        <!-- springboot web包 -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-web</artifactId>  
+        </dependency>  
+  
+  
+        <!-- springboot swagger2包 -->  
+        <dependency>  
+            <groupId>io.springfox</groupId>  
+            <artifactId>springfox-swagger2</artifactId>  
+            <version>${swagger2.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>io.springfox</groupId>  
+            <artifactId>springfox-swagger-ui</artifactId>  
+            <version>${swagger2.version}</version>  
+        </dependency>  
+  
+        <!-- springboot 安全控制Spring Security -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-security</artifactId>  
+        </dependency>  
+  
+        <!--  
+            数据库相关 
+         -->  
+        <!-- springboot jdbc -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-jdbc</artifactId>  
+        </dependency>  
+  
+        <!-- mysql支持 -->  
+        <dependency>  
+            <groupId>mysql</groupId>  
+            <artifactId>mysql-connector-java</artifactId>  
+            <version>${mysql.version}</version>  
+        </dependency>  
+          
+        <!-- Spring-data-jpa -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-data-jpa</artifactId>  
+        </dependency>  
+          
+        <!-- NoSQL数据库之MongoDB -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>  
+        </dependency>  
+        <!-- 整合mybatis -->  
+        <dependency>  
+            <groupId>org.mybatis.spring.boot</groupId>  
+            <artifactId>mybatis-spring-boot-starter</artifactId>  
+            <version>${mybatis.version}</version>  
+        </dependency>  
+          
+        <!-- mongodb driver -->  
+        <dependency>  
+            <groupId>org.mongodb</groupId>  
+            <artifactId>mongodb-driver</artifactId>  
+            <version>${mongodb.version}</version>  
+        </dependency>  
+          
+        <!-- Redis -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-redis</artifactId>  
+        </dependency>  
+          
+        <!-- springboot 开启缓存cache -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-cache</artifactId>  
+        </dependency>  
+  
+        <!-- 缓存EhCache -->  
+        <dependency>  
+            <groupId>net.sf.ehcache</groupId>  
+            <artifactId>ehcache</artifactId>  
+        </dependency>  
+  
+        <!-- aop切面 -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-aop</artifactId>  
+        </dependency>  
+  
+        <!-- 监控端点actuator -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-actuator</artifactId>  
+        </dependency>  
+  
+  
+        <!-- springboot web开发thymeleaf模板 -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>  
+        </dependency>  
+  
+        <!-- springboot web开发freemarker模板 -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-freemarker</artifactId>  
+        </dependency>  
+  
+        <!-- springboot web开发velocity模板 -->  
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-velocity</artifactId>  
+        </dependency>  
+  
+  
+        <!-- springboot工具 修改代码后不需重启即生效 -->  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>springloaded</artifactId>  
+        </dependency>  
+  
+    </dependencies>  
+  
+  
+    <build>  
+        <plugins>  
+            <plugin>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-maven-plugin</artifactId>  
+            </plugin>  
+        </plugins>  
+    </build>  
+</project>  
