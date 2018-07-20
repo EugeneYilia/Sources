@@ -11,3 +11,5 @@ deb-src http://ports.ubuntu.com/ xenial-backports main restricted universe multi
 END_TEXT
 apt update && apt upgrade
 apt install vim -y
+apt install openssh-server -y
+service sshd start
