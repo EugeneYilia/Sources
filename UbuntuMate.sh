@@ -13,3 +13,7 @@ apt update && apt upgrade
 apt install vim -y
 apt install openssh-server -y
 service sshd start
+apt install fish
+chsh -s /usr/bin/fish
+curl -L https://get.oh-my.fish | fish
+omf install https://github.com/amio/omf-theme-eden
